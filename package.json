@@ -1,0 +1,17 @@
+{
+  "name": "node_lunch_and_learn",
+  "version": "1.0.0",
+  "description": "Lunch and Learn About Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Dave Stevens",
+  "license": "ISC",
+  "engines": {
+    "node": "8.6.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
