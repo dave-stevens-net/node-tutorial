@@ -6,7 +6,10 @@
 1. [Install nvm](#install-nvm)
 1. [Running Node](#running-node)
 1. [Using npm](#using-npm)
-
+    * [Starting a New Project](#starting-new-project)
+    * [Adding a Dependent Package](#adding-dependency)
+    * [Running Scripts](#running-scripts)
+    * [Removing a Dependent Package](#removing-dependency)
 
 ## <a name="intro"></a>Intro
 
@@ -78,7 +81,7 @@ node server.js
 
 npm is Node's package manager. Go to https://www.npmjs.com/ to discover packages to build awesome Javascript applications with.
 
-### Starting a New Project
+### <a name="starting-new-project"></a>Starting a New Project
 When starting a project, it can be helpful to create a package.json file, which lists all of the packages that your project is dependent on.
 
 ```
@@ -105,7 +108,7 @@ license: (ISC)
 About to write to /projects/node_lunch_and_learn/package.json: ...
 ```
 
-### Installing an Existing Project
+### <a name="installing-existing-project"></a>Installing an Existing Project
 
 One of the first steps you will need to take after cloning a node project is to install all of its dependent packages. These packages are placed into a special folder called node_modules. To create this folder and install all dependent packages run the following:
 
@@ -113,7 +116,7 @@ One of the first steps you will need to take after cloning a node project is to 
 npm install    # Intalls all dependencies listed in package.json into the node_modules folder
 ```
 
-### Adding a Dependent Package
+### <a name="adding-dependency"></a>Adding a Dependent Package
 
 If you are wanting to add a dependency out on the npm registry to your project, you can install a package as either a prod dependency (required while the application executes) or as a dev depednency (required to enhance or build the project).
 
@@ -122,7 +125,7 @@ npm install --save-prod express # installs the express package as a prod depende
 npm install --save-dev gulp     # installs the gulp package as a dev dependency
 ```
 
-### Running Scripts
+### <a name="running-scripts"></a>Running Scripts
 
 The package.json file contains a place for command line scripts where you can define a script to run using a shorthand npm command. For example, a start script can be defined as follows:
 
@@ -138,7 +141,7 @@ This can then be run using the following npm command.
 npm run start
 ```
 
-### Removing a Dependent Package
+### <a name="removing-dependency"></a>Removing a Dependent Package
 
 To remove a dependent package you can run `npm uninstall`. For example, the following will uninstall the express package and also remove the dependency from your package.json file.
 
