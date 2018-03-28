@@ -3,12 +3,12 @@
 ## Contents
 
 1. [Intro](#intro)
-1. [Install nvm](#)
-1. [Running Node](#)
-1. [Using npm](#)
+1. [Install nvm](#install-nvm)
+1. [Running Node](#running-node)
+1. [Using npm](#using-npm)
 
 
-## Intro
+## <a name="intro"></a>Intro
 
 Node.js is "an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side" (see https://en.wikipedia.org/wiki/Node.js).
 
@@ -29,7 +29,7 @@ So, why use it?
 * Even if you never spin up a node server, you will need to know Node's package manager (npm) and will use it for front end build processes.
 * Node is also very helpful as a light weight scripting language for batch and dev ops applications.
 
-## Install nvm
+## <a name="install-nvm"></a>Install nvm
 
 As a best practice, projects that use node.js should standardize on a particular version of node in their projects. This can be documented by speciying the "engines" attribute in your package.json file (see https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version). More on package.json settings when we discuss node's package manager (npm).
 
@@ -53,7 +53,7 @@ nvm uninstall v7.10.1 # - uninstalls a particular version of node
 ```
 It is important to note that each version isntalled has its own copy of any node_modules that have been installed for that version. If you switch versions, you may not have the same global modules installed.
 
-## Running Node
+## <a name="running-node"></a>Running Node
 
 ```
 $ node -v               # - check what version you are using
@@ -74,7 +74,7 @@ node hello_world.js
 node server.js
 ```
 
-## Using npm
+## <a name="using-npm"></a>Using npm
 
 npm is Node's package manager. Go to https://www.npmjs.com/ to discover packages to build awesome Javascript applications with.
 
