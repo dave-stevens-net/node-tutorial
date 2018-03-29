@@ -126,7 +126,7 @@ npm install --save-prod express # installs the express package as a prod depende
 npm install --save-dev gulp     # installs the gulp package as a dev dependency
 ```
 
-When you use the --save options, the dependency is added to package.json. One of the most important things in your package.json file are the package versions. You can edit the package.json file to change what version of a package you want to use. See https://docs.npmjs.com/misc/semver#versions for a guide on how to specify what version of a package your project is dependent on.
+When you use the --save options, the package is added to the "dependencies" section of package.json. One of the most important settings in your package.json file is the package version. You can edit the package.json file to change what version of a package you want to use. See https://docs.npmjs.com/misc/semver#versions for a guide on how to specify what version of a package your project is dependent on.
 
 ### <a name="running-scripts"></a>Running Scripts
 
