@@ -10,6 +10,7 @@
     * [Adding a Dependent Package](#adding-dependency)
     * [Running Scripts](#running-scripts)
     * [Removing a Dependent Package](#removing-dependency)
+    * [npm Best Practices](#npm-best-practices)
 
 ## <a name="intro"></a>Intro
 
@@ -34,9 +35,9 @@ So, why use it?
 
 ## <a name="install-nvm"></a>Install nvm
 
-As a best practice, projects that use node.js should standardize on a particular version of node in their projects. This can be documented by speciying the "engines" attribute in your package.json file (see https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version). More on package.json settings when we discuss node's package manager (npm).
+As a best practice, projects that use node.js should standardize on a particular version of node in their projects. This can be documented by specifying the "engines" attribute in your package.json file (see https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version). More on package.json settings when we discuss node's package manager (npm).
 
-You can install node.js directly from https://nodejs.org/en/. However, since projects often standarize on different versions of node, it can be handy to have a tool to switch node versions from the command line when switching projects. That's where [nvm](https://github.com/creationix/nvm) (Node Version Manager) comes in handy.
+You can install node.js directly from https://nodejs.org/en/. However, since projects often standardize on different versions of node, it can be handy to have a tool to switch node versions from the command line when switching projects. That's where [nvm](https://github.com/creationix/nvm) (Node Version Manager) comes in handy.
 
 Therefore, I recommend that developers install nvm first and use nvm to install Node.js.
 
@@ -48,13 +49,13 @@ Linux / Mac Users:
 
 Some useful nvm instructions:
 ```
-nvm ls                # - displays a list of intalled node versions
+nvm ls                # - displays a list of installed node versions
 nvm ls-remote         # - displays available versions to install
 nvm install v7.10.1   # - install a particular version of node
 nvm use v8.6          # - switch versions
 nvm uninstall v7.10.1 # - uninstalls a particular version of node
 ```
-It is important to note that each version isntalled has its own copy of any node_modules that have been installed for that version. If you switch versions, you may not have the same global modules installed.
+It is important to note that each version installed has its own copy of any node_modules that have been installed for that version. If you switch versions, you may not have the same global modules installed.
 
 ## <a name="running-node"></a>Running Node
 
@@ -110,7 +111,7 @@ About to write to /projects/node_lunch_and_learn/package.json: ...
 
 ### <a name="installing-existing-project"></a>Installing an Existing Project
 
-One of the first steps you will need to take after cloning a node project is to install all of its dependent packages. These packages are placed into a special folder called node_modules. To create this folder and install all dependent packages run the following:
+Node uses the package.json file (created in the above step) to keep track of your project's dependencies. One of the first steps you will need to take after cloning an existing node project is to install all of its dependent packages listed in package.json. These packages are placed into a special folder called node_modules. To create this folder and install all dependent packages run the following:
 
 ```
 npm install    # Intalls all dependencies listed in package.json into the node_modules folder
@@ -118,12 +119,14 @@ npm install    # Intalls all dependencies listed in package.json into the node_m
 
 ### <a name="adding-dependency"></a>Adding a Dependent Package
 
-If you are wanting to add a dependency out on the npm registry to your project, you can install a package as either a prod dependency (required while the application executes) or as a dev depednency (required to enhance or build the project).
+If you want to add a dependency out on the npm registry to your project, you can install a package as either a prod dependency (required while the application executes) or as a dev depedency (required to enhance or build the project).
 
 ```
 npm install --save-prod express # installs the express package as a prod dependency
 npm install --save-dev gulp     # installs the gulp package as a dev dependency
 ```
+
+When you use the --save options, the dependency is added to package.json. One of the most important things in your package.json file are the package versions. You can edit the package.json file to change what version of a package you want to use. See https://docs.npmjs.com/misc/semver#versions for a guide on how to specify what version of a package your project is dependent on.
 
 ### <a name="running-scripts"></a>Running Scripts
 
@@ -166,3 +169,6 @@ Error: Cannot find module 'express'
 
 You can also remove packages by removing them from the list in package.json and then calling `npm prune`.
 
+### <a name="npm-best-practices"></a>npm Best Practices
+
+* Before going into production, be sure to lock down your dependencies with `npm shrinkwrap`. This will create a file called `npm-shrinkwrap.json` which lists the exact package versions of all installed packages in the entire hierarchy. This is important for replicating environments. It is important to note that npm-shrinkwrap.json takes presedence over package-lock.json when doing an `npm install`. Once an `npm shrinkwrap` is executed, you need to intentionally update your packages using `npm update`, in which case you need to repeat the `npm shrinkwrap` command, test and then push your changes to your repo.
