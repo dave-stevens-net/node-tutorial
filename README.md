@@ -126,11 +126,11 @@ npm install --save-prod express # installs the express package as a prod depende
 npm install --save-dev gulp     # installs the gulp package as a dev dependency
 ```
 
-When you use the --save options, the package is added to the "dependencies" section of package.json. One of the most important settings in your package.json file is the package version. You can edit the package.json file to change what version of a package you want to use. See https://docs.npmjs.com/misc/semver#versions for a guide on how to specify what version of a package your project is dependent on.
+When you use one of the --save options, the package is added to the "dependencies" section of package.json. One of the most important settings in your package.json file is the package version. You can fine tune exactly what version of a package you wish to use by modifying this version setting. See https://docs.npmjs.com/misc/semver#versions for a guide on how to specify what version of a package your project is dependent on.
 
 ### <a name="running-scripts"></a>Running Scripts
 
-The package.json file contains a place for command line scripts where you can define a script to run using a shorthand npm command. For example, a start script can be defined as follows:
+The package.json file contains a place for command line scripts where you can define a script to run using a shorthand npm command. For example, a "start" script can be defined as follows. The name of the script can be whatever you want.
 
 ```
   "scripts": {
