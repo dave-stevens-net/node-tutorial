@@ -11,6 +11,8 @@
     * [Running Scripts](#running-scripts)
     * [Removing a Dependent Package](#removing-dependency)
     * [npm Best Practices](#npm-best-practices)
+1. [Javascript Tooling](#tooling)
+2. [Javascript Frameworks](#frameworks)
 
 ## <a name="intro"></a>Intro
 
@@ -172,3 +174,17 @@ You can also remove packages by removing them from the list in package.json and 
 ### <a name="npm-best-practices"></a>npm Best Practices
 
 * Before going into production, be sure to lock down your dependencies with `npm shrinkwrap`. This will create a file called `npm-shrinkwrap.json` which lists the exact package versions of all installed packages in the entire hierarchy. This is important for replicating environments. It is important to note that npm-shrinkwrap.json takes presedence over package-lock.json when doing an `npm install`. Once an `npm shrinkwrap` is executed, you need to intentionally update your packages using `npm update`, in which case you need to repeat the `npm shrinkwrap` command, test and then push your changes to your repo.
+
+## <a name="tooling"></a>Javascript Tools
+* https://code.visualstudio.com/ - good free editor. Has nice intellisense features.
+* https://atom.io/ - good free editor.
+
+## <a name="frameworks"></a>Javascript Frameworks To Explore
+* https://webpack.js.org/ - good build tool
+* https://gulpjs.com/ - good build tool
+* https://reactjs.org/ - good SPA framework
+* https://vuejs.org/ - good light weight and SPA JS framework
+* http://www.material-ui.com/ - good responsive framework, supports react components
+* https://getbootstrap.com/ - good responsive framework
+* https://www.styled-components.com/ - great way to style your React components
+
