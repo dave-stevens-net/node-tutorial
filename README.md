@@ -32,8 +32,22 @@ So, why use it?
 * Javascript is growing up as a programming language.
 * Javascript will continue to dominate the front end for web applications.
 * Trend away from js and css within HTML towards a HTML and styles within js approach. Javascript has taken over as the starting point.
-* Even if you never spin up a node server, you will need to know Node's package manager (npm) and will use it for front end build processes.
 * Node is also very helpful as a light weight scripting language for batch and dev ops applications.
+* Even if you never spin up a node server, you will need to know Node's package manager (npm) and will use it for front end build processes.
+
+### Some JavaScript Related Terminology:
+The following terms are useful in helping developers see the importance of Node.js in the JavaScript build process. Transpilers are critical for allowing developers to use modern versions of JavaScript while maintaining browser compatibility.
+
+* Transpiler (short for transcompiler or source-to-source compiler) - Is a type of compiler that converts source from one language or language version to another. https://babeljs.io/ is an example.
+* Module Loader - (see [Stack Overflow question](https://stackoverflow.com/questions/38864933/what-is-difference-between-module-loader-and-module-bundler-in-javascript))
+    > A module loader is typically some library that can load, interpret and execute JavaScript modules you defined using a certain module format/syntax, such as AMD or CommonJS.
+
+    > When you write modular JavaScript applications, you usually end up having one file per module. So when writing an application that consist of hundreds of modules it could get quite painful to make sure all files are included and in the correct order. So basically a loader will take care of the dependency management for you, by making sure all modules are loaded when the application is executed. Checkout some popular module loaders such as [RequireJS](http://requirejs.org/) and [SystemJS](https://github.com/systemjs/systemjs) to get an idea.
+
+* Module Bundler - (see [Stack Overflow question](https://stackoverflow.com/questions/38864933/what-is-difference-between-module-loader-and-module-bundler-in-javascript))
+    > Module bundlers are an alternative to module loaders. Basically they do the same thing (manage and load interdependent modules), but do it as part of the application build rather than at runtime. So instead of loading dependencies as they appear when your code is executed, a bundler stitches together all modules into a single file (a bundle) before the execution. Take a look at [Webpack](https://github.com/webpack/webpack) and [Browserify](http://browserify.org/) as two popular options.
+
+* See https://node.green/ for a mapping between Node version and ECMAScript versions. Transpilers let you utilize more advanced JavaScript features (classes, import statements, spread operators, newer loops, promises, etc.). These transpilers are built on and run using Node.js.
 
 ## <a name="install-nvm"></a>Install nvm
 
